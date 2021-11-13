@@ -1,14 +1,3 @@
-let theme = localStorage.getItem('data-theme');
-const changeThemeToDark = () => {
-    document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
-    localStorage.setItem("data-theme", "dark") // save theme to local storage
-}
-
-const changeThemeToLight = () => {
-    document.documentElement.setAttribute("data-theme", "light") // set theme light
-    localStorage.setItem("data-theme", 'light') // save theme to local storage
-}
-
 const checkbox = document.getElementById("switch");
 // Apply retrived them to the website
 checkbox.addEventListener('change', () => {
@@ -20,12 +9,28 @@ checkbox.addEventListener('change', () => {
     }   
 });
 
+let theme = localStorage.getItem('data-theme');
+const changeThemeToDark = () => {
+    document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
+    localStorage.setItem("data-theme", "dark") // save theme to local storage
+}
+
+const changeThemeToLight = () => {
+    document.documentElement.setAttribute("data-theme", "light") // set theme light
+    localStorage.setItem("data-theme", 'light') // save theme to local storage
+}
+
 const audio = new Audio("assets/song.mp3")
-const elem = document.getElementById('status')
+const status_element = document.getElementById('status')
 const WORK_TIME = 1500
 const CHILL_TIME = 300
+const start_btn = document.getElementById('start')
+const pause_btn = document.getElementById('pause')
+const restart_btn = document.getElementById('restart')
 
 function start() {
+    start_btn.style.display = 'none'
+    pause_btn.style.display = 'block'
     TIME_LIMIT = WORK_TIME
     timerInterval ?? null ? {} : startTimer()
 }
@@ -41,6 +46,8 @@ function stopAudio() {
 }
 
 function pause() {
+    start_btn.style.display = 'block'
+    pause_btn.style.display = 'none'
     clearInterval(timerInterval);
     timerInterval = null
 }
@@ -107,7 +114,7 @@ function onTimesUp() {
 }
 
 function startTimer() {
-    elem.innerHTML = TIME_LIMIT === WORK_TIME ? 'Work time!' : 'Chill time!'
+    status_element.innerHTML = TIME_LIMIT === WORK_TIME ? 'Work time!' : 'Chill time!'
     style()
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;

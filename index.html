@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="./scripts/app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
     <title>Pomodoro</title>
 </head>
 <body>
     <main>
-        <div class="app">
-            <button onclick="start()">Start pomodoro</button>
-            <button onclick="pause()">Pause</button>
-            <button id="stop-audio" onclick="stopAudio()">stop audio</button>
-            <div id="status">Click 'Start pomodoro' to start</div>
-            <div id="timer"></div>
-        </div>
-
-        <div class="toggle-container">
-            <input type="checkbox" id="switch" name="theme">
-            <label for="switch">Toggle</label>
+        <div class="container">
+            <div class="toggle-container">
+                <input type="checkbox" id="switch" name="theme">
+                <label for="switch">Toggle</label>
+            </div>
+            
+            <div class="app">
+                <h1>POMODORO</h1>
+                <p>Be better at working</p>
+                <div class="flex">
+                    <button id="start" class="btn" onclick="start()">Start</button>
+                    <button id="pause" class="btn" onclick="pause()">Pause</button>
+                    <button id="restart" class="btn" onclick="">Restart</button>
+                </div>
+                <button class="btn" id="stop-audio" onclick="stopAudio()">Stop audio</button>
+                <p id="status">Click 'Start' to jump into productivity</p>
+                <div id="timer"></div>
+            </div>
         </div>
     </main>
 </body>
