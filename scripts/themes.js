@@ -2,11 +2,12 @@ const checkbox = document.getElementById("switch");
 
 checkbox.addEventListener('change', () => {
     let theme = localStorage.getItem('data-theme');
-    if (theme ==='dark'){
+    if (theme === 'dark') {
         changeThemeToLight()
-    }else{
+    }
+    else {
         changeThemeToDark()
-    }   
+    }
 });
 
 let theme = localStorage.getItem('data-theme');
