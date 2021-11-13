@@ -1,25 +1,3 @@
-const checkbox = document.getElementById("switch");
-// Apply retrived them to the website
-checkbox.addEventListener('change', () => {
-    let theme = localStorage.getItem('data-theme'); // Retrieve saved them from local storage
-    if (theme ==='dark'){
-        changeThemeToLight()
-    }else{
-        changeThemeToDark()
-    }   
-});
-
-let theme = localStorage.getItem('data-theme');
-const changeThemeToDark = () => {
-    document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
-    localStorage.setItem("data-theme", "dark") // save theme to local storage
-}
-
-const changeThemeToLight = () => {
-    document.documentElement.setAttribute("data-theme", "light") // set theme light
-    localStorage.setItem("data-theme", 'light') // save theme to local storage
-}
-
 const audio = new Audio("assets/song.mp3")
 const status_element = document.getElementById('status')
 const WORK_TIME = 1500
