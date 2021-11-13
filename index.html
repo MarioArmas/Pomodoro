@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./scripts/app.js"></script>
+    <title>Pomodoro</title>
+</head>
+<body>
+    <main>
+        <div class="app">
+            <button onclick="start()">Start pomodoro</button>
+            <button onclick="pause()">Pause</button>
+            <button id="stop-audio" onclick="stopAudio()">stop audio</button>
+            <div id="status">Click 'Start pomodoro' to start</div>
+            <div id="timer"></div>
+        </div>
+
+        <div class="toggle-container">
+            <input type="checkbox" id="switch" name="theme">
+            <label for="switch">Toggle</label>
+        </div>
+    </main>
+</body>
+</html>
