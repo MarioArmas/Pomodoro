@@ -27,10 +27,13 @@ body {
 
 .container {
     width: 70%;
-    margin: 0 auto;
-    padding: 2em 0;
+    margin: auto;
     max-width: 650px;
     height: 100vh;
+}
+
+label {
+    margin-top: 1.4em;
 }
 
 .app {
@@ -94,6 +97,14 @@ p {
     .flex {
         flex-direction: column;
         margin-top: 0;
+    }
+
+    .app {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
