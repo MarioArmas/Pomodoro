@@ -6,6 +6,14 @@ const start_btn = document.getElementById('start')
 const pause_btn = document.getElementById('pause')
 const restart_btn = document.getElementById('restart')
 
+function restart() {
+    pause()
+    timePassed = 0
+    timeLeft = TIME_LIMIT
+    timerInterval = null
+    style()
+}
+
 function start() {
     start_btn.style.display = 'none'
     pause_btn.style.display = 'block'
